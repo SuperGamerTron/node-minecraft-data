@@ -5,12 +5,13 @@
   "main": "index.js",
   "tonicExampleFilename": "example.js",
   "scripts": {
+    "postinstall": "cd ./node_modules/minecraft-data && git init && git submodule update --init --recursive",
     "generate:types": "node typings/generate-typings.js",
     "generate:data": "node ./bin/generate_data.js",
     "test:types": "tsc typings/test-typings && node typings/test-typings.js",
     "test": "npm run generate:types && npm run generate:data && npm run lint && npm run test:types && mocha",
     "lint": "standard",
-    "prepare": "npm run generate:data && npm run generate:types",
+    "123prepare": "npm run generate:data && npm run generate:types",
     "fix": "standard --fix"
   },
   "standard": {
